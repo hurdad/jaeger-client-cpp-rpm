@@ -1,9 +1,9 @@
 # jaeger-client-cpp
-version = 0.6.0
+version = 0.6.1
 release = 1
 name = jaeger-client-cpp
 full_name = $(name)-$(version)
-download_url = "https://github.com/jaegertracing/$(name)/archive/v$(version).tar.gz"
+download_url = "https://github.com/hurdad/$(name)/archive/v$(version).tar.gz"
 
 all: rpm
 

@@ -16,6 +16,9 @@ Jaeger SDK with OpenTracing API for C++ binding
 Summary:	%{name} development package
 Group:		Development/Libraries
 Requires:	%{name} = %{version}
+Requires:	thrift-devel
+Requires:	yaml-cpp-devel
+Requires:	opentracing-cpp-devel
 
 %description devel
 Development files for %{name}.
