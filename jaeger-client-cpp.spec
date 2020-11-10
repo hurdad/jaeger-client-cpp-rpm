@@ -7,8 +7,10 @@ License:	Apache 2.0
 URL:            https://github.com/jaegertracing/jaeger-client-cpp
 Source:         %{name}-%{version}.tar.gz      
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
-Patch0: 	Cmake.patch
 BuildRequires:  cmake3
+BuildRequires:  thrift-devel
+BuildRequires:  yaml-cpp-devel
+BuildRequires:	opentracing-cpp-devel
 
 %description
 Jaeger SDK with OpenTracing API for C++ binding
@@ -25,7 +27,6 @@ Development files for %{name}.
 
 %prep
 %setup
-%patch0 -p0
 
 %build
 cmake3 -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -DHUNTER_ENABLED=OFF -DBUILD_TESTING=OFF
