@@ -9,7 +9,6 @@ Source:         %{name}-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildRequires:  cmake3
 BuildRequires:  thrift-devel
-BuildRequires:  yaml-cpp-devel
 BuildRequires:	opentracing-cpp-devel
 
 %description
@@ -19,7 +18,6 @@ Summary:	%{name} development package
 Group:		Development/Libraries
 Requires:	%{name} = %{version}
 Requires:	thrift-devel
-Requires:	yaml-cpp-devel
 Requires:	opentracing-cpp-devel
 
 %description devel
@@ -29,7 +27,7 @@ Development files for %{name}.
 %setup
 
 %build
-cmake3 -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -DHUNTER_ENABLED=OFF -DBUILD_TESTING=OFF
+cmake3 -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -DHUNTER_ENABLED=OFF -DBUILD_TESTING=OFF -DJAEGERTRACING_WITH_YAML_CPP=OFF -DJAEGERTRACING_BUILD_EXAMPLES=OFF
 
 make %{?_smp_mflags}
 
